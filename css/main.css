@@ -1,0 +1,158 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+ .valentine{
+    width: 500px;
+    height: 300px;
+    background-image: url(../image/ziX5yqp5T.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 100px auto;
+    box-shadow: 5px 5px 20px crimson;
+    position: relative;
+    perspective: 800px;
+}
+.left{
+    width: 50%;
+    height: inherit;
+    background: rgb(133, 9, 34);
+    position: absolute;
+    top: 0;
+    transition: 500ms;
+    text-align: center;
+    line-height: 300px;
+    left: 0;
+    transform-origin: top right;
+}
+.right{
+    width: 50%;
+    height: inherit;
+    background: rgb(92, 4, 22);
+    position: absolute;top: 0;
+    text-align: center;
+    line-height: 300px;
+    right: 0;
+    transform-origin: top right;
+}
+.valentine:hover .left{
+    transform: rotateY(225deg);
+    transform-origin: top left;
+    opacity: 0.5;
+
+}
+.valentine:hover .right{
+    transform: rotateY(-225deg);
+    transform-origin: top right;
+    opacity: 0.5;
+} 
+
+
+ .product{
+    width: 400px;
+    height: 300px;
+   
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+
+.image{
+    width: inherit;
+height: inherit;
+transform: rotateY(0);
+ backface-visibility: hidden; 
+transition: 300ms;
+& img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    
+}
+
+}
+&:hover .image{
+   transform: scale(1.5,1.5);
+}
+.cover{
+width: inherit;
+height: inherit;
+background-image: linear-gradient(to left , rgba(20,20,150,0.8), rgba(67, 103, 157, 0.8),rgba(158, 207, 222, 0.8) );
+position: absolute;
+top: 0;
+padding: 20px;
+text-align: center;
+transform: scale(0,0);
+ backface-visibility: hidden;
+ transition: 300ms;
+& h1{
+    color: crimson;
+    margin-bottom: 20px;
+}
+& p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    margin-bottom: 20px;
+}
+& a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: aliceblue;
+    display: block;
+    width: 70px;
+    height: 30px;
+    background-color: #2c2c2c ;
+    border-radius: 10px;
+    line-height: 30px;border: 2px solid wheat;
+}
+}
+&:hover .cover{
+  transform: scale(1,1);
+}
+} 
+
+.parent{
+    width:100%;
+    height: 100vh;
+    margin: 0 auto;
+    background: darkblue;
+    display:flex;
+    flex-flow:row nowrap;
+align-content: center;
+justify-content: center;
+
+
+
+    .child{
+        width: 200px;
+ height: 200px;
+        background: yellow;
+
+
+        &:nth-of-type(1){
+            flex-grow: 1;
+            background: red;
+            flex-basis: 200px;
+            flex-shrink:5 ;
+order: 3;
+        }
+        &:nth-of-type(2){
+     flex-grow: 2;
+     background-color: pink;
+     flex-basis: 200px;
+     order: 1;
+        }
+     &:nth-of-type(3){
+        flex-grow: 3;
+        background: greenyellow;
+        flex-basis: 200px;
+        flex-shrink:15 ;
+        order: 2;
+     }
+    
+
+       
+    }
+
+}
